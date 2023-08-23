@@ -1,1 +1,3 @@
-/aboutProgramm.txt
+/self/*
+__pycache__
+TEST.py
