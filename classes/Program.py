@@ -1,11 +1,12 @@
+from classes.physics.Physics import Physics
+
 def start():
     print("program is on")
     key = chooseItem()
     if key == None: return None
     startTesting(key)
+    randTask()
     
-
-
 def chooseItem():
     print("Выберите предмет")
     print("[1] - Физика\n[0] - Выход")
@@ -28,6 +29,14 @@ def chooseItem():
 
 def startTesting(key):
     # Сдесь можно добавить функцию выбора кол-ва заданий
-    if key == 1:
+    print("Введи кол-во заданий(макс. 10):")
+    while True:
+        count = int(input())
+        if count <= 10 and 1 < count:
+            return count
+        print("---")
     
-        
+
+def randTask():
+    p = Physics()
+    p.chooseTask(p.chooseUnderItem)
