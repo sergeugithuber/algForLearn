@@ -1,13 +1,15 @@
-from classes.physics.Physics import Physics
-
 def start():
     print("program is on")
     key = chooseItem()
-    if key == None: return None
-    startTesting(key)
-    randTask()
+    if chooseItem() == None: return None
+    countOfTask()
+    i = 0
+    while i != countOfTask():
+        i = i + 1
+        randTask()
     
-def chooseItem():
+# Выбор предмета Физика, Русский, Математика и т.д.. На данный момент доступна только Физика
+def chooseItem(): 
     print("Выберите предмет")
     print("[1] - Физика\n[0] - Выход")
     key = input()
@@ -27,8 +29,8 @@ def chooseItem():
         print("Выберите предмет")
         key = input()
 
-def startTesting(key):
-    # Сдесь можно добавить функцию выбора кол-ва заданий
+# Выбор кол-ва заданий мин. 1, макс. 10
+def countOfTask():
     print("Введи кол-во заданий(макс. 10):")
     while True:
         count = int(input())
@@ -36,7 +38,6 @@ def startTesting(key):
             return count
         print("---")
     
-
-def randTask():
-    p = Physics()
-    p.chooseTask(p.chooseUnderItem)
+# Выбор ПОДпредмета выбронного предмета
+def randChapter():
+    

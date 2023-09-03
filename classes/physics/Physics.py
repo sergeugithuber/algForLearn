@@ -1,4 +1,3 @@
-from pathlib import Path
 from random import randint
 
 class Physics:
@@ -28,7 +27,7 @@ class Physics:
                     answer = answer[0]
                     break
                 i = i + 1
-        print(answer, "УБРАТЬ")
+        print(answer, "УБРАТЬ") # вернуть ответ и даллее сверить с пользовательским
         return answer
     
         
