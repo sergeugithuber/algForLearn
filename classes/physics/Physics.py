@@ -11,7 +11,7 @@ class Physics:
         with open(fileName, "r", encoding="UTF-8") as f:
             array = f.readlines()
             # выбор случайного числа
-            num = randint(1, int(len(array) - 1))
+            num = randint(1, len(array) - 1)
             if int(num % 2) == 0:
                 num = num + 1
 
