@@ -1,7 +1,7 @@
 # from pathlib import Path
 # from classes.Program import start
 # from classes.physics.Kinematics import Kinematics
-from classes.Program import randChapter
+from classes.Program import randChapter, start
 
 # Запуск программы
 # start()
@@ -46,4 +46,4 @@ if r >= 75:
 elif r <= 35:
     print(f'Ты выиграл, твой шанс: {r}') 
 
-randChapter()
+start()

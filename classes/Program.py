@@ -11,14 +11,14 @@ from classes.physics.Thermodynamics import Thermodynamics
 
 def start():
     print("program is on")
-    key = chooseItem()
     if chooseItem() == None:
         return None
-    countOfTask()
+    
+    count = countOfTask()
     i = 0
-    while i != countOfTask():
+    while i != count:
         i = i + 1
-        # randTask()
+        randChapter()
 
 # Выбор предмета Физика, Русский, Математика и т.д.. На данный момент доступна только Физика
 
@@ -50,7 +50,7 @@ def countOfTask():
     print("Введи кол-во заданий(макс. 10):")
     while True:
         count = int(input())
-        if count <= 10 and 1 < count:
+        if count <= 10 and 1 <= count:
             return count
         print("---")
 

@@ -27,7 +27,9 @@ class Physics:
                     answer = answer[0]
                     break
                 i = i + 1
-        print(answer, "УБРАТЬ") # вернуть ответ и даллее сверить с пользовательским
+        # вернуть ответ и даллее сверить с пользовательским
+        print("Ответ:")
+        answerUser = int(input())
+        if answer == answerUser:
+            print("Верно!")
         return answer
-    
-        
