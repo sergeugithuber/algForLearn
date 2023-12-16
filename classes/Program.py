@@ -6,37 +6,29 @@ from classes.physics.Molecular import Molecular
 from classes.physics.Electrostatics import Electrostatics
 from classes.physics.Thermodynamics import Thermodynamics
 
-# Запуск основной программы
-
-
-def start():
-    print("program is on")
-    if chooseItem() == None:
-        return None
+def start(): # запуск алгоритма
+    while True:
+        if chooseItem() == None:
+            return None
     
-    count = countOfTask()
-    i = 0
-    while i != count:
-        i = i + 1
-        randChapter()
+        count = countOfTask()
+        i = 0
+        while i != count:
+            i = i + 1
+            randChapter()
 
-# Выбор предмета Физика, Русский, Математика и т.д.. На данный момент доступна только Физика
-
-
-def chooseItem():
-    print("Выберите предмет")
+def chooseItem(): # выбор раздела
     print("[1] - Физика\n[0] - Выход")
-    key = input()
+    key = input("Выберите предмет: ")
 
     while True:
-
         if key == "1":
-            # Выбрана Физика
+            # Физика
             return 1
 
         if key == "0":
+            print("bye")
             return None  # Выход
-
         else:
             print("Неизвестная кнопка")
 
@@ -46,7 +38,7 @@ def chooseItem():
 # Выбор кол-ва заданий мин. 1, макс. 10
 
 
-def countOfTask():
+def countOfTask(): # выбор количества заданий
     print("Введи кол-во заданий(макс. 10):")
     while True:
         count = int(input())
@@ -54,15 +46,11 @@ def countOfTask():
             return count
         print("---")
 
-# Выбор ПОДпредмета выбронного предмета
-
-
 def randChapter():
     p = Physics()
     p.chooseTask(returnPhysicsTask())
 
-
-def returnPhysicsTask():
+def returnPhysicsTask(): # случайный выбор задачи из подраздела физики
     k = Kinematics()
     d = Dynamics()
     m = Molecular()

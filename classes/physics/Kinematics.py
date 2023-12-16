@@ -11,7 +11,3 @@ class Kinematics(Physics):
     def getFile(self):
         return self.file_to_open
 
-    # открытие файлка
-    # выбор задания
-    # решение пользователя
-    # сохранения ответа в файл

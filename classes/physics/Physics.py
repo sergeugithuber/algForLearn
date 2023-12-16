@@ -7,11 +7,9 @@ class Physics:
         return self.dict.get(r)
     
     def chooseTask(self, fileName):
-        # Нахождение размера файла
         with open(fileName, "r", encoding="UTF-8") as f:
             array = f.readlines()
-            # выбор случайного числа
-            num = randint(1, len(array) - 1)
+            num = randint(1, len(array) - 1) # выбор случайного числа
             if int(num % 2) == 0:
                 num = num + 1
 
@@ -19,17 +17,17 @@ class Physics:
             i = 0
             for line in f:
                 if i == num - 1:
-                    print("Задача:")
+                    print("-------------\nЗадача:")
                     print(line)
-                    print("Ответ: ")
                 if i == num:
                     answer = line.split()
                     answer = answer[0]
                     break
                 i = i + 1
-        # вернуть ответ и даллее сверить с пользовательским
-        print("Ответ:")
-        answerUser = int(input())
+        answerUser = input("Ответ: ")
+        print("результат: ", end="")
         if answer == answerUser:
-            print("Верно!")
+            print("ВЕРНО!")
+        else:
+            print("НЕверно")
         return answer
